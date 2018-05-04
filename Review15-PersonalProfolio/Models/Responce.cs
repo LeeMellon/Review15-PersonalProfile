@@ -15,7 +15,7 @@ namespace Review15PersonalProfolio.Models
         public int UserId { get; set; }
         public int PostId { get; set; }
         public virtual Post Post { get; set; }
-        public string PostText { get; set; }
+        public string ResponceText { get; set; }
 
         public override bool Equals(System.Object otherResponce)
         {
