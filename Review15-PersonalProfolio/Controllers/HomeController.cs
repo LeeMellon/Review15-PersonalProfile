@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Review15_PersonalProfolio.Controllers
+namespace Review15PersonalProfolio.Controllers
 {
     public class HomeController : Controller
     {
