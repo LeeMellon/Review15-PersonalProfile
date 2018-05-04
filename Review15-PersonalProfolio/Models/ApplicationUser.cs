@@ -14,7 +14,9 @@ namespace Review15PersonalProfolio.Models
         [Key]
         public string UserId { get; set; }
         public string Role { get; set; }
-        public string Name { get; set; }
+        public string NameFirst { get; set; }
+        public string NameLast { get; set; }
+        public string ProfileName { get; set; }
         public virtual ICollection<Responce> Responces { get; set; }
 
         public override bool Equals(System.Object otherApplicationUser)

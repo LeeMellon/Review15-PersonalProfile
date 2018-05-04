@@ -13,6 +13,7 @@ namespace Review15PersonalProfolio.Models
         [Key]
         public int ResponceId { get; set; }
         public int UserId { get; set; }
+        public virtual ApplicationUser User { get; set; }
         public int PostId { get; set; }
         public virtual Post Post { get; set; }
         public string ResponceText { get; set; }

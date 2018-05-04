@@ -141,7 +141,9 @@ namespace Review15PersonalProfolio.Migrations
 
                     b.Property<DateTimeOffset?>("LockoutEnd");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("NameFirst");
+
+                    b.Property<string>("NameLast");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(127);
@@ -154,6 +156,8 @@ namespace Review15PersonalProfolio.Migrations
                     b.Property<string>("PhoneNumber");
 
                     b.Property<bool>("PhoneNumberConfirmed");
+
+                    b.Property<string>("ProfileName");
 
                     b.Property<string>("Role");
 
@@ -201,19 +205,19 @@ namespace Review15PersonalProfolio.Migrations
                     b.Property<int>("ResponceId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("ApplicationUserId");
-
                     b.Property<int>("PostId");
 
                     b.Property<string>("ResponceText");
 
                     b.Property<int>("UserId");
 
+                    b.Property<string>("UserId1");
+
                     b.HasKey("ResponceId");
 
-                    b.HasIndex("ApplicationUserId");
-
                     b.HasIndex("PostId");
+
+                    b.HasIndex("UserId1");
 
                     b.ToTable("Responces");
                 });
@@ -257,14 +261,14 @@ namespace Review15PersonalProfolio.Migrations
 
             modelBuilder.Entity("Review15PersonalProfolio.Models.Responce", b =>
                 {
-                    b.HasOne("Review15PersonalProfolio.Models.ApplicationUser")
-                        .WithMany("Responces")
-                        .HasForeignKey("ApplicationUserId");
-
                     b.HasOne("Review15PersonalProfolio.Models.Post", "Post")
                         .WithMany("Responces")
                         .HasForeignKey("PostId")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Review15PersonalProfolio.Models.ApplicationUser", "User")
+                        .WithMany("Responces")
+                        .HasForeignKey("UserId1");
                 });
         }
     }

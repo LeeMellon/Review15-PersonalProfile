@@ -49,7 +49,6 @@ namespace Review15PersonalProfolio.Migrations
                     EmailConfirmed = table.Column<bool>(nullable: false),
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
-                    Name = table.Column<string>(nullable: true),
                     NormalizedEmail = table.Column<string>(maxLength: 127, nullable: true),
                     NormalizedUserName = table.Column<string>(maxLength: 127, nullable: true),
                     PasswordHash = table.Column<string>(nullable: true),
@@ -174,26 +173,26 @@ namespace Review15PersonalProfolio.Migrations
                 {
                     ResponceId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGeneratedOnAdd", true),
-                    ApplicationUserId = table.Column<string>(nullable: true),
                     PostId = table.Column<int>(nullable: false),
-                    PostText = table.Column<string>(nullable: true),
-                    UserId = table.Column<int>(nullable: false)
+                    ResponceText = table.Column<string>(nullable: true),
+                    UserId = table.Column<int>(nullable: false),
+                    UserId1 = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Responces", x => x.ResponceId);
-                    table.ForeignKey(
-                        name: "FK_Responces_AspNetUsers_ApplicationUserId",
-                        column: x => x.ApplicationUserId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Responces_Posts_PostId",
                         column: x => x.PostId,
                         principalTable: "Posts",
                         principalColumn: "PostId",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Responces_AspNetUsers_UserId1",
+                        column: x => x.UserId1,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -234,14 +233,14 @@ namespace Review15PersonalProfolio.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Responces_ApplicationUserId",
-                table: "Responces",
-                column: "ApplicationUserId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Responces_PostId",
                 table: "Responces",
                 column: "PostId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Responces_UserId1",
+                table: "Responces",
+                column: "UserId1");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -268,10 +267,10 @@ namespace Review15PersonalProfolio.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
+                name: "Posts");
 
             migrationBuilder.DropTable(
-                name: "Posts");
+                name: "AspNetUsers");
         }
     }
 }

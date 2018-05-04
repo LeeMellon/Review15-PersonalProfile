@@ -9,6 +9,18 @@ namespace Review15PersonalProfolio.ViewModels
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name = "First Name")]
+        public string NameFirst { get; set; }
+
+        [Required]
+        [Display(Name = "Last Name")]
+        public string NameLast { get; set; }
+
+        [Required]
+        [Display(Name = "Profile Name")]
+        public string ProfileName { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
