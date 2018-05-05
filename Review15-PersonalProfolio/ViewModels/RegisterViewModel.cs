@@ -1,25 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Review15PersonalProfolio.ViewModels
 {
     public class RegisterViewModel
     {
-        [Required]
-        [Display(Name = "First Name")]
-        public string NameFirst { get; set; }
-
-        [Required]
-        [Display(Name = "Last Name")]
-        public string NameLast { get; set; }
-
-        [Required]
-        [Display(Name = "Profile Name")]
-        public string ProfileName { get; set; }
-
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

@@ -1,0 +1,24 @@
+﻿@model Review15PersonalProfolio.Models.Post
+
+@{
+    ViewData["Title"] = "Post Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    @using (Html.BeginForm())
+    {
+
+    <div>
+        <label>Post Title :</label>
+        @Html.TextBoxFor(model => model.Title)
+        <label>Blog Title</label>
+        @Html.TextAreaFor(model => model.Text)
+        <label>Img Url</label>
+        @Html.TextBoxFor(modelItem => Model.Img)
+        <label>Img Alt</label>
+        @Html.TextBoxFor(modelItem => Model.Alt)
+        <input type="submit" value="Add" class="btn btn-primary"/>
+    </div>
+    }
+</div>
+

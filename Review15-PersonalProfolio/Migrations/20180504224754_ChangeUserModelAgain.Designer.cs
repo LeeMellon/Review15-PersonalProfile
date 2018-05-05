@@ -8,9 +8,10 @@ using Review15PersonalProfolio.Models;
 namespace Review15PersonalProfolio.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180504224754_ChangeUserModelAgain")]
+    partial class ChangeUserModelAgain
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2");
@@ -141,8 +142,6 @@ namespace Review15PersonalProfolio.Migrations
 
                     b.Property<DateTimeOffset?>("LockoutEnd");
 
-                    b.Property<string>("Name");
-
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(127);
 
@@ -204,8 +203,6 @@ namespace Review15PersonalProfolio.Migrations
                     b.Property<int>("PostId");
 
                     b.Property<string>("ResponceText");
-
-                    b.Property<string>("ResponceTitle");
 
                     b.Property<int>("UserId");
 

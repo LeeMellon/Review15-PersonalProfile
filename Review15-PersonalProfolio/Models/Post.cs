@@ -16,7 +16,7 @@ namespace Review15PersonalProfolio.Models
         public string Text { get; set; }
         public string Img { get; set; }
         public string Alt { get; set; }
-        public ICollection<Responce> Responces { get; set; }
+        public virtual ICollection<Responce> BlogResponces { get; set; }
 
         public override bool Equals(System.Object otherPost)
         {

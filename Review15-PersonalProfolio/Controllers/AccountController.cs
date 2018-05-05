@@ -41,6 +41,8 @@ namespace Review15PersonalProfolio.Controllers
             IdentityResult result = await _userManager.CreateAsync(user, model.Password);
             if (result.Succeeded)
             {
+   
+
                 return RedirectToAction("Index");
             }
             else
