@@ -17,7 +17,7 @@
                     </div>
                 </div>
             @Html.ActionLink("Write a responce", "Responce", new { id = @p.PostId , title = @p.Title});
-            @if (p.BlogResponces.Count() > 0)
+            @if (p.BlogResponces != null)
             {
                 <span class="responce-reveal">Click to View Responces</span>
                  @foreach (Responce r in p.BlogResponces)

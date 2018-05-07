@@ -33,11 +33,13 @@ namespace Review15PersonalProfolio.Controllers
 
         public IActionResult BlogDisplayView()
         {
-            
+
+            var dbTest = _db.Responces;
+            var postWithResponceList = _db.Posts.Include(p => p.BlogResponces);
             if (_db.Responces != null)
             {
-                var blogs = _db.Posts.Include(p => p.BlogResponces).ToList();
-            return View(blogs);
+                var blogs = GetBlogs();
+                return View(blogs);
             }
             else
             {
@@ -45,6 +47,11 @@ namespace Review15PersonalProfolio.Controllers
                 return View(blogs);
             }
 
+        }
+
+        private List<Post> GetBlogs()
+        {
+            return _db.Posts.Include(p => p.BlogResponces).ToList();
         }
 
         public IActionResult Create()

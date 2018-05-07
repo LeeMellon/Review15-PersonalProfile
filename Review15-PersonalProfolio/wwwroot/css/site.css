@@ -1,6 +1,14 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url('../images/Maple.png');
+    background-size: cover;
+    background-repeat:no-repeat;
+    width: 95vw;
+    height:inherit;
+    color:gainsboro;
+}
+    
 }
 
 /* Wrapping element */
@@ -8,7 +16,6 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-}
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
 input,
@@ -35,3 +42,5 @@ textarea {
         display: none;
     }
 }
+
+

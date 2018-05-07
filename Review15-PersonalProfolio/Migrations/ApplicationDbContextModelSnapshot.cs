@@ -207,15 +207,13 @@ namespace Review15PersonalProfolio.Migrations
 
                     b.Property<string>("ResponceTitle");
 
-                    b.Property<int>("UserId");
-
-                    b.Property<string>("UserId1");
+                    b.Property<string>("UserId");
 
                     b.HasKey("ResponceId");
 
                     b.HasIndex("PostId");
 
-                    b.HasIndex("UserId1");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Responces");
                 });
@@ -266,7 +264,7 @@ namespace Review15PersonalProfolio.Migrations
 
                     b.HasOne("Review15PersonalProfolio.Models.ApplicationUser", "User")
                         .WithMany("Responces")
-                        .HasForeignKey("UserId1");
+                        .HasForeignKey("UserId");
                 });
         }
     }
