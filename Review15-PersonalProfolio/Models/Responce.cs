@@ -15,6 +15,7 @@ namespace Review15PersonalProfolio.Models
         [ForeignKey("UserId")]
         public string UserId { get; set; }
         public virtual ApplicationUser User { get; set; }
+        public string ProfileName { get; set; }
         [ForeignKey("PostId")]
         public int PostId { get; set; }
         public virtual Post Post { get; set; }
@@ -23,9 +24,10 @@ namespace Review15PersonalProfolio.Models
 
         public Responce() { }
 
-        public Responce(string userId, int postId, string responceTitle, string responceText)
+        public Responce(string userId, string profileName, int postId, string responceTitle, string responceText)
         {
             UserId = userId;
+            ProfileName = profileName;
             PostId = postId;
             ResponceTitle = responceTitle;
             ResponceText = responceText;

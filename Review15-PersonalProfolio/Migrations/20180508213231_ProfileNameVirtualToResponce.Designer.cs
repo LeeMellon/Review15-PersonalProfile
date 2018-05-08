@@ -8,9 +8,10 @@ using Review15PersonalProfolio.Models;
 namespace Review15PersonalProfolio.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180508213231_ProfileNameVirtualToResponce")]
+    partial class ProfileNameVirtualToResponce
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2");

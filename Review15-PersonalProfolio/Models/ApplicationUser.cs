@@ -13,6 +13,7 @@ namespace Review15PersonalProfolio.Models
     {
         [Key]
         public string UserId { get; set; }
+        public string ProfileName { get; set; }
         public string Role { get; set; }
         public string Name { get; set; }
         public virtual ICollection<Responce> Responces { get; set; }

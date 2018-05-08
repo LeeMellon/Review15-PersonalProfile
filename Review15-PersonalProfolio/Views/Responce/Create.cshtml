@@ -8,17 +8,17 @@
     @using (Html.BeginForm())
     {
 
-        <div>
-            <label>Post Title :</label>
-            <h3>@ViewBag.PostTitle</h3>
-            <label>Responce Subject Line</label>
-            <input type="text" name="title" placeholder="Subject Line" />
-            <label>Responce text</label>
-            <textarea  rows="5" cols="30" name="text" placeholder="Responce Text"></textarea>
-            @Html.HiddenFor(model => model.UserId)
-            <input type="hidden" value=@ViewBag.Id name="postId" />
-            <input type="submit" value="Add" class="btn btn-primary" />
-        </div>
+    <div>
+        <label>Post Title :</label>
+        <h3>@ViewBag.PostTitle</h3>
+        <label>Responce Subject Line</label>
+        <input type="text" name="title" placeholder="Subject Line" />
+        <label>Responce text</label>
+        <textarea rows="5" cols="30" name="text" placeholder="Responce Text"></textarea>
+        @Html.HiddenFor(model => model.UserId)
+        <input type="hidden" value=@ViewBag.Id name="postId" />
+        <input type="submit" value="Add" class="btn btn-primary" />
+    </div>
     }
 </div>
 

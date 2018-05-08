@@ -35,7 +35,7 @@ namespace Review15PersonalProfolio.Controllers
         public IActionResult BlogDisplayView()
         {
 
-            var dbTest = _db.Responces;
+
             var postWithResponceList = _db.Posts.Include(p => p.BlogResponces);
             if (_db.Responces != null)
             {

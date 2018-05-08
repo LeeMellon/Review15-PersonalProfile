@@ -67,7 +67,7 @@ display:none;
     flex-flow: column;
     border: grey 5px solid;
     border-radius: 10px;
-    width: 20vw;
+    width: inherit;
     justify-content: space-between;
     padding-top: 5px;
     padding-bottom: 20px;

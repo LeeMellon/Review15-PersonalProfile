@@ -8,9 +8,10 @@ using Review15PersonalProfolio.Models;
 namespace Review15PersonalProfolio.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180508205458_RegistrationAddProfileName")]
+    partial class RegistrationAddProfileName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2");
@@ -155,8 +156,6 @@ namespace Review15PersonalProfolio.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed");
 
-                    b.Property<string>("ProfileName");
-
                     b.Property<string>("Role");
 
                     b.Property<string>("SecurityStamp");
@@ -224,8 +223,6 @@ namespace Review15PersonalProfolio.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("PostId");
-
-                    b.Property<string>("ProfileName");
 
                     b.Property<string>("ResponceText");
 
