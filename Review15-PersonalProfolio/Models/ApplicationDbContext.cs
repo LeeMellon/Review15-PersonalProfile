@@ -31,6 +31,6 @@ namespace Review15PersonalProfolio.Models
         public DbSet<Post> Posts { get; set; }
         public DbSet<Responce> Responces { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
-
+        public DbSet<Picture> Pictures { get; set; }
     }
 }

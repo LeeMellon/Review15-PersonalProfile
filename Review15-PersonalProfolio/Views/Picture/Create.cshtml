@@ -1,0 +1,41 @@
+﻿@model Review15PersonalProfolio.Models.Picture
+
+@{
+    ViewData["Title"] = "Picture Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    @using (Html.BeginForm())
+    {
+
+        <div class="picture-form">
+            <h2>Create Picture Form</h2>
+            <div>
+                <div class="form-line">
+                <label>Picture Title :</label> <br />
+                @Html.TextBoxFor(model => model.Title)<br />
+                </div>
+                <div class="form-line">
+                    <label>Picture Caption</label><br />
+                    @Html.TextAreaFor(model => model.Caption)<br />
+                </div>
+                <div class="form-line">
+                    <label>Picture Location :</label><br />
+                    @Html.TextBoxFor(model => model.Location)<br />
+                </div>
+                <div class="form-line">
+                    <label>Picture Url</label><br />
+                    @Html.TextBoxFor(modelItem => Model.Url)<br />
+                </div>
+                <div class="form-line">
+                    <label>Picture Alt</label><br />
+                    @Html.TextBoxFor(modelItem => Model.Alt)<br />
+                </div>
+                <div class="form-line">
+                    <input type="submit" value="Add" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    }
+</div>

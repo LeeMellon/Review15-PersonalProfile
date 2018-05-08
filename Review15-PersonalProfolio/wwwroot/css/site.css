@@ -1,16 +1,79 @@
-﻿body {
+﻿.picture-form{
+    display: flex;
+    height:auto;
+    flex-flow: column;
+    border: grey 5px solid;
+    border-radius: 10px;
+    width: 20vw;
+    justify-content:space-between;
+    padding-top: 5px;  
+    padding-bottom: 20px;
+}
+
+.post-form {
+    display: flex;
+    height: auto;
+    flex-flow: column;
+    border: grey 5px solid;
+    border-radius: 10px;
+    width: 20vw;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+/*.picture-container {
+
+}*/
+
+
+.picture{
+    border: grey 10px outset;
+    height: 30vw;
+}
+
+
+
+.picture-frame {
+    display: flex;
+    flex-direction:column;
+    align-content:center;
+    justify-content:center;
+    align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+
+    .post-form {
+        display: flex;
+        height: auto;
+        flex-flow: column;
+        border: grey 5px solid;
+        border-radius: 10px;
+        width: 10em;
+        justify-content: space-between;
+        
+    }
+}
+
+
+
+.form-line{
+    padding: 4px;
+}
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
     background-image: url('../images/Maple.png');
     background-size: cover;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     width: 95vw;
-    height:inherit;
-    color:gainsboro;
+    height: inherit;
+    color: gainsboro;
 }
     
-}
-
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
@@ -42,5 +105,4 @@ textarea {
         display: none;
     }
 }
-
 

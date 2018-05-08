@@ -8,8 +8,8 @@ using Review15PersonalProfolio.Models;
 namespace Review15PersonalProfolio.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180507191835_AddPictureClassTable")]
-    partial class AddPictureClassTable
+    [Migration("20180507235031_PicturesClass")]
+    partial class PicturesClass
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -177,6 +177,26 @@ namespace Review15PersonalProfolio.Migrations
                         .HasName("UserNameIndex");
 
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("Review15PersonalProfolio.Models.Picture", b =>
+                {
+                    b.Property<int>("PictureId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Alt");
+
+                    b.Property<string>("Caption");
+
+                    b.Property<string>("Location");
+
+                    b.Property<string>("Title");
+
+                    b.Property<string>("Url");
+
+                    b.HasKey("PictureId");
+
+                    b.ToTable("Pictures");
                 });
 
             modelBuilder.Entity("Review15PersonalProfolio.Models.Post", b =>

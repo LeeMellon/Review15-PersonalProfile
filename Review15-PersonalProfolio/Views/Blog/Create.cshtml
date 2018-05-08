@@ -8,17 +8,29 @@
     @using (Html.BeginForm())
     {
 
-    <div>
-        <label>Post Title :</label>
-        @Html.TextBoxFor(model => model.Title)
-        <label>Blog Title</label>
-        @Html.TextAreaFor(model => model.Text)
-        <label>Img Url</label>
-        @Html.TextBoxFor(modelItem => Model.Img)
-        <label>Img Alt</label>
-        @Html.TextBoxFor(modelItem => Model.Alt)
-        <input type="submit" value="Add" class="btn btn-primary"/>
-    </div>
+    <div class="post-form">
+        <h3>Create Blog Post</h3>
+            <div class="form-line">
+                <label>Post Title :</label><br />
+                @Html.TextBoxFor(model => model.Title)<br />
+            </div>
+            <div class="form-line">
+                <label>Text</label><br />
+                @Html.TextAreaFor(model => model.Text)<br />
+            </div>
+            <div class="form-line">
+                <label>Img Url</label><br />
+                @Html.TextBoxFor(modelItem => Model.Img)<br />
+            </div>
+            <div class="form-line">
+                <label>Img Alt</label><br />
+                @Html.TextBoxFor(modelItem => Model.Alt)<br />
+            </div>
+            <div class="form-line">
+                <input type="submit" value="Add" class="btn btn-primary" /><br />
+            </div>
+        </div>
+
     }
 </div>
 

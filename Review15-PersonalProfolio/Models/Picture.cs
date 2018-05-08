@@ -11,13 +11,12 @@ namespace Review15PersonalProfolio.Models
     public class Picture
     {
         [Key]
-        public int PicId { get; set; }
+        public int PictureId { get; set; }
         public string Url { get; set; }
         public string Alt { get; set; }
         public string Title { get; set; }
         public string Caption { get; set; }
         public string Location { get; set; }
-
 
         public Picture() { }
 
@@ -28,6 +27,27 @@ namespace Review15PersonalProfolio.Models
             Title = title;
             Caption = caption;
             Location = location;
+        }
+
+       
+
+
+        public override bool Equals(System.Object otherPicture)
+        {
+            if (!(otherPicture is Picture))
+            {
+                return false;
+            }
+            else
+            {
+                Picture newPicture = (Picture)otherPicture;
+                return this.PictureId.Equals(newPicture.PictureId);
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return this.PictureId.GetHashCode();
         }
     }
 }

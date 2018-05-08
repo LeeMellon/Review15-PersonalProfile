@@ -1,0 +1,50 @@
+﻿
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript">
+
+          $(document).ready(function () {
+        $('.picture-create').click(function () {
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("Create", "Picture")',
+                success: function (result) {
+                    $('#picture-create-view').html(result);
+
+                }
+            });
+        });
+
+
+
+            $('.blog-create').click(function () {
+                $.ajax({
+                    type: 'GET',
+                    url: '@Url.Action("Create", "blog")',
+                    success: function (result) {
+                    $('#blog-create-view').html(result);
+
+                    }
+                    });
+                    });
+
+ });
+    </script>
+</head>
+    <body>
+
+    <div class="blog-create">
+        <p class="blog-create">Create a new blog post</p>
+    </div>
+
+    <div class="picture-create">
+        <p>Add a new picture</p>
+    </div>
+
+
+    <div id="picture-create-view"></div>
+    <div id="blog-create-view"></div>
+
+    </body>
+</html>

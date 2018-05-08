@@ -178,6 +178,26 @@ namespace Review15PersonalProfolio.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("Review15PersonalProfolio.Models.Picture", b =>
+                {
+                    b.Property<int>("PictureId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Alt");
+
+                    b.Property<string>("Caption");
+
+                    b.Property<string>("Location");
+
+                    b.Property<string>("Title");
+
+                    b.Property<string>("Url");
+
+                    b.HasKey("PictureId");
+
+                    b.ToTable("Pictures");
+                });
+
             modelBuilder.Entity("Review15PersonalProfolio.Models.Post", b =>
                 {
                     b.Property<int>("PostId")

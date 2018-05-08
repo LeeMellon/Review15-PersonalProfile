@@ -35,9 +35,9 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    <li><a asp-area="" asp-controller="Blog" asp-action="BlogDisplayView">Blog</a></li>
-
-                </ul>
+                    <li><a asp-area="" asp-controller="Blog" class="blog-display">Blog</a></li>
+                    <li><a asp-area="" asp-controller="Picture" asp-action="Index">Pictures</a></li>
+                    <li><a asp-area="" asp-controller="Admin" asp-action="Index">Admin</a></li>                </ul>
                 <ul class="nav navbar-nav navbar-right">
                  @{
                     if (User.Identity.IsAuthenticated)
@@ -62,6 +62,34 @@
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
+        <script type="text/javascript"
+                $(document).ready(function () {
+        $('.blog-display').click(function () {
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("Blog","BlogDisplayView")',
+                success: function (result) {
+                    $('#blog-body-view').html(result);
+
+                }
+            });
+        });
+                
+            $('.blog-create').click(function () {
+                $.ajax({
+                    type: 'GET',
+                    url: '@Url.Action("Blog","Create")',
+                    success: function (result) {
+                        $('#blog-create-view').html(result);
+
+                    }
+                });
+            });
+
+
+    });
+                </script>
+
     </environment>
     <environment names="Staging,Production">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"

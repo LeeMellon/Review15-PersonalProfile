@@ -23,8 +23,22 @@ namespace Review15PersonalProfolio.Controllers
 
         public IActionResult Index()
         {
-            //var picsList = _db.Pictures.ToList();
+            var picsList = _db.Pictures.ToList();
+            return View(picsList);
+        }
+
+        public IActionResult Create()
+        {
+
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Picture picture)
+        {
+            _db.Pictures.Add(picture);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

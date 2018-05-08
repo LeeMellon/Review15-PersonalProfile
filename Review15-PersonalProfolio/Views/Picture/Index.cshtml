@@ -1,0 +1,17 @@
+﻿@using Review15PersonalProfolio.Models;
+@using Microsoft.EntityFrameworkCore;
+
+@foreach(Picture p in Model)
+{
+    <div class="picture container">
+        <div class="picture-frame">
+            <img src="@Url.Content(@p.Url)" alt="@p.Alt" class="picture"/>
+        </div>
+        <div>
+            <h4>@p.Title</h4>
+            <p>@p.Caption</p>
+            <p>@p.Location</p>
+        </div>
+    </div>
+
+}
