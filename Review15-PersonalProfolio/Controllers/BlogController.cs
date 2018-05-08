@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Review15PersonalProfolio.Models;
 
@@ -68,27 +69,21 @@ namespace Review15PersonalProfolio.Controllers
             return RedirectToAction("BlogDisplayView");
         }
 
-        public IActionResult Responce(int id, string title)
+        
+        public IActionResult Delete()
         {
-            ViewBag.Id = id;
-            ViewBag.PostTitle = title;
-            return View();
+            ViewBag.PostId = new SelectList(_db.Posts, "PostId", "Title");
+             return View();
         }
 
         [HttpPost]
-        public IActionResult Responce(Responce responce)
+        public IActionResult Delete(int PostId)
         {
-            var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-
-            
-            var postId = Int32.Parse(Request.Form["postId"]);
-            var title = Request.Form["title"];
-            var text = Request.Form["text"];
-            Responce newResponce = new Responce(userId, postId, title, text);
-            _db.Responces.Add(newResponce);
+            var idInput = PostId;
+            var thisPost = _db.Posts.FirstOrDefault(p => p.PostId == PostId);
+            _db.Posts.Remove(thisPost);
             _db.SaveChanges();
-            return RedirectToAction("BlogDisplayView");
-
+            return RedirectToAction("Index", "Admin");
         }
     }
 }

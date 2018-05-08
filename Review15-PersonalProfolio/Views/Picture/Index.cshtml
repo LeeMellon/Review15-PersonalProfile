@@ -3,9 +3,10 @@
 
 @foreach(Picture p in Model)
 {
+    <br />
     <div class="picture-container">
         <div class="picture-frame">
-            <img src="@Url.Content(@p.Url)" alt="@p.Alt" class="picture"/>
+            <img src="@Url.Content(@p.Url)" alt="@p.Alt" class="picture" title="@p.Url"/>
         </div>
         <div class="placard">
             <h4>@p.Title</h4>
@@ -13,5 +14,6 @@
             <p>@p.Location</p>
         </div>
     </div>
+    <br />
 
 }

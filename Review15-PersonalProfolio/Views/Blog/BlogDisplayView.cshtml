@@ -2,37 +2,47 @@
 @using Microsoft.EntityFrameworkCore;
     
 
-<div>
+
         @foreach (Post p in Model)
-        {
+        { 
+            <br />
             <div class="post-container">
+                <div class="post-frame">
                 <input type="hidden" name="postId" value=@p.PostId>
-                @Html.DisplayFor(modelItem => p.Title)
                 <div class="post-body">
-                    <div class="post-img-container">
-                        <img src="@Url.Content(@p.Img)" alt="@p.Alt" />
-                    </div>
-                    <div class="post-text">
-                    @Html.DisplayTextFor(modelItem => p.Text)
-                    </div>
+                <div class="post-title">
+                    <h3>@Html.DisplayFor(modelItem => p.Title)</h3>
                 </div>
-            @Html.ActionLink("Write a responce", "Responce", new { id = @p.PostId , title = @p.Title});
-            @if (p.BlogResponces != null)
+                <div class="post-img-container"><br />
+                <img src="@Url.Content(@p.Img)" alt="@p.Alt" class="post-img" />
+                </div>
+                <div class="post-text"><br />
+                  @Html.DisplayTextFor(modelItem => p.Text)
+                </div>
+                </div><br />
+                </div>
+           <h4>@Html.ActionLink("Write a responce", "Responce", "Create", new { id = @p.PostId , title = @p.Title})</h4> <br />
+            @if ((p.BlogResponces != null) && (p.BlogResponces.Count() > 0))
             {
                 <span class="responce-reveal">Click to View Responces</span>
-                 @foreach (Responce r in p.BlogResponces)
-                 {
-                    <div class="responce-container">
-        
-                     <div class="responce-text">
-                         <p>
-                            @r.ResponceText
-                         </p>
-                     </div>
-                    </div>
-                 }
+                <div class="responce-block">
+                     @foreach (Responce r in p.BlogResponces)
+                     {
+                        <div class="responce-container">
+                            <div>
+                            @r.UserId
+                            </div>
+                         <div class="responce-text">
+                             <p>
+                                @r.ResponceText
+                             </p>
+                         </div>
+                        </div>
+                     }
+
+                </div>
+
             }
-            </div>
-     
+            </div> 
         }  
-</div>
+      

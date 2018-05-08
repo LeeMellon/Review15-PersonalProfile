@@ -16,12 +16,22 @@
             });
         });
 
+               $('.picture-delete').click(function () {
+                $.ajax({
+                    type: 'GET',
+                    url: '@Url.Action("Delete", "Picture")',
+                    success: function (result) {
+                    $('#picture-delete-view').html(result);
+
+                    }
+                    });
+                    });
 
 
             $('.blog-create').click(function () {
                 $.ajax({
                     type: 'GET',
-                    url: '@Url.Action("Create", "blog")',
+                    url: '@Url.Action("Create", "Blog")',
                     success: function (result) {
                     $('#blog-create-view').html(result);
 
@@ -29,22 +39,59 @@
                     });
                     });
 
+             $('.blog-delete').click(function () {
+                $.ajax({
+                    type: 'GET',
+                    url: '@Url.Action("Delete", "Blog")',
+                    success: function (result) {
+                    $('#blog-delete-view').html(result);
+
+                    }
+                    });
+              });
+
+              $('.responce-delete').click(function () {
+                $.ajax({
+                    type: 'GET',
+                    url: '@Url.Action("Delete", "Responce")',
+                    success: function (result) {
+                    $('#responce-delete-view').html(result);
+
+                    }
+                    });
+                    });
+
+
  });
     </script>
 </head>
-    <body>
+<body>
 
     <div class="blog-create">
         <p class="blog-create">Create a new blog post</p>
+    </div>
+    <div class="blog-delete">
+        <p class="blog-delete">Delete a blog post</p>
     </div>
 
     <div class="picture-create">
         <p>Add a new picture</p>
     </div>
 
+    <div class="picture-delete">
+        <p>Remove a picture</p>
+    </div>
 
-    <div id="picture-create-view"></div>
+    <div class="responce-delete">
+        <p class="responce-delete">Delete a responce</p>
+    </div>
+
+
     <div id="blog-create-view"></div>
+    <div id="blog-delete-view"></div>
+    <div id="picture-create-view"></div>
+    <div id="picture-delete-view"></div>
+    <div id="responce-delete-view"></div>
 
-    </body>
+</body>
 </html>

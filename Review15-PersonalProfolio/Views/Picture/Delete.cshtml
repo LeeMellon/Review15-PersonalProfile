@@ -1,0 +1,12 @@
+﻿@model Review15PersonalProfolio.Models.Picture
+
+@{
+    ViewData["Title"] = "Picture Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.DropDownList("PictureId");
+    <input type="submit" value="Delete" name="PictureId" />
+}
