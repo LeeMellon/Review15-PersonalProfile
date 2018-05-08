@@ -55,7 +55,7 @@
     </nav>
     <div class="container body-content">
         @RenderBody()
-
+        <div id="blog-body-view"></div>
     </div>
 
     <environment names="Development">
@@ -74,20 +74,7 @@
                 }
             });
         });
-                
-            $('.blog-create').click(function () {
-                $.ajax({
-                    type: 'GET',
-                    url: '@Url.Action("Blog","Create")',
-                    success: function (result) {
-                        $('#blog-create-view').html(result);
-
-                    }
-                });
-            });
-
-
-    });
+ 
                 </script>
 
     </environment>
