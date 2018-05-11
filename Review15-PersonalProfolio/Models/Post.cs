@@ -14,6 +14,7 @@ namespace Review15PersonalProfolio.Models
         public int PostId { get; set; }
         public string Title { get; set; }
         public string Text { get; set; }
+        public string Blurb { get; set; }
         public string Img { get; set; }
         public string Alt { get; set; }
         public virtual ICollection<Responce> BlogResponces { get; set; }
@@ -36,5 +37,11 @@ namespace Review15PersonalProfolio.Models
             return this.PostId.GetHashCode();
         }
 
+        public void GetBlurb()
+        {
+            this.Blurb = this.Text.Substring(0, 200) + "...";
+        }
+
+      
     }
 }

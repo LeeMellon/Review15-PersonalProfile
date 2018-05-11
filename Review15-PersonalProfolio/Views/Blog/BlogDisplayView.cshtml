@@ -4,8 +4,9 @@
 
 
         @foreach (Post p in Model)
-        { 
+        {
             <br />
+            <a href=@Url.Action("PostDisplayView/" + @p.PostId + "", "Blog")>
             <div class="post-container">
                 <div class="post-frame">
                 <input type="hidden" name="postId" value=@p.PostId>
@@ -17,34 +18,12 @@
                 <img src="@Url.Content(@p.Img)" alt="@p.Alt" class="post-img" />
                 </div>
                 <div class="post-text"><br />
-                  @Html.DisplayTextFor(modelItem => p.Text)
+                  @Html.DisplayTextFor(modelItem => p.Blurb)
                 </div>
-                </div><br />
                 </div>
-           <h4>@Html.ActionLink("Write a responce", "Create", "Responce", new { id = @p.PostId , title = @p.Title})</h4> <br />
-            @if ((p.BlogResponces != null) && (p.BlogResponces.Count() > 0))
-            {
-                <span class="responce-reveal">Click to View Responces</span>
-                <div class="responce-block">
-                     @foreach (Responce r in p.BlogResponces)
-                     {
-                        <div class="responce-container">
-                            <div>
-                           <p>
-                           Written by : @r.ProfileName
-                           </p>
-                            </div>
-                         <div class="responce-text">
-                             <p>
-                                @r.ResponceText
-                             </p>
-                         </div>
-                        </div>
-                     }
-
-                </div>
-
-            }
             </div> 
-        }  
+            </div>
+         </a>
+<br />
+        } 
       

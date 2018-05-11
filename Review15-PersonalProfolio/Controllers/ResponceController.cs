@@ -48,7 +48,7 @@ namespace Review15PersonalProfolio.Controllers
             Responce newResponce = new Responce(userId, profileName, postId, title, text);
             _db.Responces.Add(newResponce);
             _db.SaveChanges();
-            return RedirectToAction("BlogDisplayView", "Blog");
+            return RedirectToAction ("BlogDisplayView", "Blog");
 
         }
 

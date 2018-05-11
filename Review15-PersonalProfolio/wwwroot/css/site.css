@@ -93,6 +93,10 @@ display:none;
     border: 2px inset slategrey; 
 }
 
+.hidden-click{
+    display:none;
+}
+
 @media screen and (max-width: 767px) {
     .post-form {
         display: flex;

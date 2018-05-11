@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Dynamic;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
@@ -32,6 +32,13 @@ namespace Review15PersonalProfolio.Controllers
             return View();
         }
 
+        public IActionResult PostDisplayView(int id)
+        {
+            var thisPost = _db.Posts.Include(p => p.BlogResponces).Where(p => p.PostId == id).ToList();
+            return View(thisPost);
+        }
+
+
         public IActionResult BlogDisplayView()
         {
 
@@ -39,7 +46,13 @@ namespace Review15PersonalProfolio.Controllers
             var postWithResponceList = _db.Posts.Include(p => p.BlogResponces);
             if (_db.Responces != null)
             {
-                var blogs = GetBlogs();
+                List<Post> blogs = new List<Post> { };
+                foreach(Post p in _db.Posts.Include(p => p.BlogResponces).ToList())
+                {
+                    p.GetBlurb();
+                    blogs.Add(p);
+                }
+
                 return View(blogs);
             }
             else
@@ -50,10 +63,6 @@ namespace Review15PersonalProfolio.Controllers
 
         }
 
-        private List<Post> GetBlogs()
-        {
-            return _db.Posts.Include(p => p.BlogResponces).ToList();
-        }
 
         public IActionResult Create()
         {
