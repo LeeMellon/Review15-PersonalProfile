@@ -11,7 +11,7 @@ namespace Review15PersonalProfolio.Controllers
     {
         public IActionResult Index()
         {
-            return RedirectToAction("Index", "Blog");
+            return RedirectToAction("Index");
         }
 
         public IActionResult About()
