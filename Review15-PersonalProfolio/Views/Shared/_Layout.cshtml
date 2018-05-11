@@ -35,9 +35,11 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    <li><a asp-area="" asp-controller="Blog" class="blog-display">Blog</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="GetRepos">Git Repository</a></li>
+                    <li><a asp-area="" asp-controller="Blog" asp-action="Index">Blog</a></li>
                     <li><a asp-area="" asp-controller="Picture" asp-action="Index">Pictures</a></li>
-                    <li><a asp-area="" asp-controller="Admin" asp-action="Index">Admin</a></li>                </ul>
+                    <li><a asp-area="" asp-controller="Admin" asp-action="Index">Admin</a></li>
+                </ul>
                 <ul class="nav navbar-nav navbar-right">
                  @{
                     if (User.Identity.IsAuthenticated)
@@ -56,26 +58,43 @@
     <div class="container body-content">
         @RenderBody()
         <div id="blog-body-view"></div>
+        <div id="repo-body-view"></div>
     </div>
 
     <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
-        <script type="text/javascript"
-                $(document).ready(function () {
-        $('.blog-display').click(function () {
-            $.ajax({
-                type: 'GET',
-                url: '@Url.Action("Blog","BlogDisplayView")',
-                success: function (result) {
-                    $('#blog-body-view').html(result);
+        <script type="text/javascript">
 
-                }
+            $(document).ready(function () {
+                
+                $('.blog-display').click(function () {
+                    $.ajax({
+                        type: 'GET',
+                        url: '@Url.Action("Blog","BlogDisplayView")',
+                        success: function (result) {
+                            $('#blog-body-view').html(result);
+
+                        }
+                    });
+                });
+
+                $('.repo-display').click(function () {
+                    $.ajax({
+                        type: 'GET',
+                        url: '@Url.Action("Home","GetRepos")',
+                        success: function (result) {
+                            $('#repo-body-view').html(result);
+
+                        }
+                    });
+                });
+
             });
-        });
+        </script>
  
-                </script>
+  
 
     </environment>
     <environment names="Staging,Production">
