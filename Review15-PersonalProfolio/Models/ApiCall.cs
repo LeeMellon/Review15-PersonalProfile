@@ -29,11 +29,6 @@ namespace Review15PersonalProfolio.Models
 
             JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(response.Content);
             var results = JsonConvert.DeserializeObject<List<Repo>>(jsonResponse.ToString());
-            //Console.WriteLine(results[0].Name);
-            //Console.WriteLine(results[1].Name);
-            //Console.WriteLine(results[2].Name);
-            //Console.WriteLine(results[3].Name);
-            //Console.ReadLine();
 
             return results;
         }
@@ -53,11 +48,7 @@ namespace Review15PersonalProfolio.Models
 
             JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(response.Content);
             var results = JsonConvert.DeserializeObject<List<Repo>>(jsonResponse.ToString());
-            //Console.WriteLine(results[0].Name);
-            //Console.WriteLine(results[1].Name);
-            //Console.WriteLine(results[2].Name);
-            //Console.WriteLine(results[3].Name);
-            //Console.ReadLine();
+
 
             return results;
         }
