@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Review15PersonalProfolio.Models;
 
 namespace Review15PersonalProfolio.Controllers
 {
@@ -30,6 +31,13 @@ namespace Review15PersonalProfolio.Controllers
         public IActionResult Error()
         {
             return View();
+        }
+
+        public IActionResult GetRepos()
+        {
+            var newCall = new ApiCall();
+            var bulkRepos = newCall.GetRepos();
+            return View(bulkRepos);
         }
     }
 }
