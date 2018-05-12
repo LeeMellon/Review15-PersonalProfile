@@ -1,15 +1,59 @@
-﻿@using Review15PersonalProfolio.Models;
-@using Microsoft.EntityFrameworkCore;
+﻿
 
-@foreach (Repo r in Model)
-{
-    <br />
-    <a href=@r.Html_url><div class="repo-container">
-        <div class="repo-card">
-            <h4>@r.Name</h4>
-            <p>@r.Description</p>
-        </div>
-    </div></a>
-    <br />
+<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="~/css/site.css" />
+<script type="text/javascript">
 
-}
+
+    $(document).ready(function () {
+        $('.repo-all-display').click(function () {
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("ReposDisplayView")',
+                success: function (result) {
+                    $('#repo-body-view').html(result);
+
+                }
+            });
+        });
+
+
+
+    });
+
+
+
+    $(document).ready(function () {
+        $('.repo-star-display').click(function () {
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("StarredDsiplayView")',
+                success: function (result) {
+                    $('#repo-star-view').html(result);
+
+                }
+            });
+        });
+
+
+
+    });
+
+</script>
+
+
+<body>
+    <div>
+        @*<h1 class="repo-all-display">All Repos</h1>*@
+        <h1 class="repo-star-display">Top Starred Repos</h1>
+    </div>
+
+    <div id="repo-all-view"></div>
+    <div>
+    <div id="repo-star-view"></div>
+
+    </div>
+
+</body>
+
+

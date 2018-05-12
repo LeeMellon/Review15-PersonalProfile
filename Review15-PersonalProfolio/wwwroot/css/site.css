@@ -28,8 +28,7 @@
     align-items: center;
 }
 
-.placard
-{
+.placard{
     border: ridge 3px black;
     border-radius: 7px;
     padding-top:5px;
@@ -93,8 +92,81 @@ display:none;
     border: 2px inset slategrey; 
 }
 
-.hidden-click{
-    display:none;
+.admin-panel {
+    margin-top:10vw;
+    margin-left:auto;
+    margin-right:auto;
+    background-color: rgba(51, 51, 51, .8);
+    display: flex;
+    height: auto;
+    flex-flow: column;
+    border: grey 5px solid;
+    border-radius: 10px;
+    width: 12vw;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    font-size: 20pt;
+}
+
+.skills-panel {
+    font-size: 15pt;
+
+}
+.repo-card {
+    background-color: rgba(51, 51, 51, .8);
+    border: grey 5px solid;
+    border-radius: 10px;
+    padding-left: 10px;
+    width: auto;
+    margin-bottom: 10px;
+}
+
+.resume-panel {
+    text-decoration: none;
+    color: gainsboro;
+}
+
+
+.ed-panel {
+    background-color: rgba(51, 51, 51, .8);
+    border: grey 5px solid;
+    border-radius: 10px;
+    padding-left: 10px;
+    width: auto;
+    margin-bottom: 10px;
+}
+.ed-panel li{
+    font-size: 12pt;
+}
+
+.blather-panel {
+    background-color: rgba(51, 51, 51, .8);
+    border: grey 5px solid;
+    border-radius: 10px;
+    padding-left: 10px;
+    width: auto;
+    margin-bottom: 10px;
+    font-size: 12pt;
+}
+.contact-panel {
+    text-decoration:none;  
+    margin-top: 10vw;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(51, 51, 51, .8);
+    display: flex;
+    height: auto;
+    flex-flow: column;
+    border: grey 5px solid;
+    border-radius: 10px;
+    width: 20vw;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    font-size: 20pt;
 }
 
 @media screen and (max-width: 767px) {

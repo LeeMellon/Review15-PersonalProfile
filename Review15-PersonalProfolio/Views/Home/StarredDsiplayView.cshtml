@@ -1,0 +1,17 @@
+﻿@using Review15PersonalProfolio.Models;
+@using Microsoft.EntityFrameworkCore;
+
+@foreach (Repo r in Model)
+{
+    <br />
+    <a href=@r.Html_url>
+        <div class="repo-container">
+            <div class="repo-card">
+                <h4>@r.Name</h4>
+                <p>@r.Description</p>
+            </div>
+        </div>
+    </a>
+    <br />
+
+}

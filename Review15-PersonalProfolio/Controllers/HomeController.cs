@@ -33,9 +33,22 @@ namespace Review15PersonalProfolio.Controllers
 
         public IActionResult GetRepos()
         {
+            
+            return View();
+        }
+
+        //public IActionResult ReposDisplayView()
+        //{
+        //    var newCall = new ApiCall();
+        //    var repos = newCall.GetRepos().ToList();
+        //    return View( repos);
+        //}
+
+        public IActionResult StarredDsiplayView()
+        {
             var newCall = new ApiCall();
-            var bulkRepos = newCall.GetStarred();
-            return View(bulkRepos);
+            var repos = newCall.GetStarred();
+            return View(repos);
         }
     }
 }
