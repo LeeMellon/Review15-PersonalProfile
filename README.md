@@ -8,18 +8,19 @@ Phake Pholio is a C#/.NET bog/portfolio exercise done for Epicodus bootcamp. It 
 
 * Login/Logout
 * Write blog posts and incorporate images.
-* Useres can respond to blog posts. 
+* Useres can respond to blog posts.
 * Add photos to custom photo library.
 * About Section.
 * Contact Section.
 * AJAX Routing .
 * Entity Framework code first SQL databse.
-
+* API calls
+* Better CSS/Design
+* My Top Git Repos
 ## Future Functionality
 
 * User Rolls
-* API calls
-* Better CSS/Design
+* Still Better CSS/Design
 
 
 
