@@ -39,7 +39,19 @@ namespace Review15PersonalProfolio.Models
 
         public void GetBlurb()
         {
+            
+            if (Text.Length == 0)
+            {
+                this.Blurb = "No Text Provided";
+            }
+            else if(this.Text.Length >= 200)
+            {
             this.Blurb = this.Text.Substring(0, 200) + "...";
+            }
+            else
+            {
+                this.Blurb = this.Text;
+            }
         }
 
       
