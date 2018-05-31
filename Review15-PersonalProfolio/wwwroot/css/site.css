@@ -183,9 +183,13 @@ display:none;
 }
 
 
-
 .form-line{
     padding: 4px;
+    color: black;
+}
+
+label{
+    color: gainsboro;
 }
 
 body {
@@ -197,6 +201,15 @@ body {
     width: 95vw;
     height: inherit;
     color: gainsboro;
+}
+
+
+.black {
+    color: black;
+}
+
+select{
+    color: black;
 }
 
 /* Wrapping element */
